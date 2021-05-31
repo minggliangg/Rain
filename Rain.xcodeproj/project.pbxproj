@@ -13,6 +13,11 @@
 		9B3E2DC22664C8EE00A181E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3E2DC02664C8EE00A181E4 /* Main.storyboard */; };
 		9B3E2DC42664C8F000A181E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3E2DC32664C8F000A181E4 /* Assets.xcassets */; };
 		9B3E2DC72664C8F000A181E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3E2DC52664C8F000A181E4 /* LaunchScreen.storyboard */; };
+		9B3E2DD02664CD2200A181E4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E2DCF2664CD2200A181E4 /* TableViewController.swift */; };
+		9B3E2DD32664CE0C00A181E4 /* RealtimeRainfall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E2DD22664CE0C00A181E4 /* RealtimeRainfall.swift */; };
+		9B3E2DD52664D49D00A181E4 /* RainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E2DD42664D49D00A181E4 /* RainService.swift */; };
+		9B3E2DDE2665253500A181E4 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3E2DDC2665253500A181E4 /* LocationTableViewCell.swift */; };
+		9B3E2DDF2665253500A181E4 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B3E2DDD2665253500A181E4 /* LocationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9B3E2DC32664C8F000A181E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B3E2DC62664C8F000A181E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3E2DC82664C8F000A181E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B3E2DCF2664CD2200A181E4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		9B3E2DD22664CE0C00A181E4 /* RealtimeRainfall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeRainfall.swift; sourceTree = "<group>"; };
+		9B3E2DD42664D49D00A181E4 /* RainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainService.swift; sourceTree = "<group>"; };
+		9B3E2DDC2665253500A181E4 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		9B3E2DDD2665253500A181E4 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,52 @@
 		9B3E2DB92664C8EE00A181E4 /* Rain */ = {
 			isa = PBXGroup;
 			children = (
+				9B3E2DD9266524B900A181E4 /* view */,
+				9B3E2DD62664D4A200A181E4 /* service */,
+				9B3E2DD12664CDE700A181E4 /* model */,
+				9B3E2DCE2664CD0800A181E4 /* controller */,
 				9B3E2DBA2664C8EE00A181E4 /* AppDelegate.swift */,
 				9B3E2DBC2664C8EE00A181E4 /* SceneDelegate.swift */,
-				9B3E2DBE2664C8EE00A181E4 /* ViewController.swift */,
 				9B3E2DC02664C8EE00A181E4 /* Main.storyboard */,
 				9B3E2DC32664C8F000A181E4 /* Assets.xcassets */,
 				9B3E2DC52664C8F000A181E4 /* LaunchScreen.storyboard */,
 				9B3E2DC82664C8F000A181E4 /* Info.plist */,
 			);
 			path = Rain;
+			sourceTree = "<group>";
+		};
+		9B3E2DCE2664CD0800A181E4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B3E2DBE2664C8EE00A181E4 /* ViewController.swift */,
+				9B3E2DCF2664CD2200A181E4 /* TableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		9B3E2DD12664CDE700A181E4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9B3E2DD22664CE0C00A181E4 /* RealtimeRainfall.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9B3E2DD62664D4A200A181E4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				9B3E2DD42664D49D00A181E4 /* RainService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		9B3E2DD9266524B900A181E4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9B3E2DDC2665253500A181E4 /* LocationTableViewCell.swift */,
+				9B3E2DDD2665253500A181E4 /* LocationTableViewCell.xib */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +173,7 @@
 			files = (
 				9B3E2DC72664C8F000A181E4 /* LaunchScreen.storyboard in Resources */,
 				9B3E2DC42664C8F000A181E4 /* Assets.xcassets in Resources */,
+				9B3E2DDF2665253500A181E4 /* LocationTableViewCell.xib in Resources */,
 				9B3E2DC22664C8EE00A181E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,9 +185,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3E2DD32664CE0C00A181E4 /* RealtimeRainfall.swift in Sources */,
+				9B3E2DDE2665253500A181E4 /* LocationTableViewCell.swift in Sources */,
 				9B3E2DBF2664C8EE00A181E4 /* ViewController.swift in Sources */,
 				9B3E2DBB2664C8EE00A181E4 /* AppDelegate.swift in Sources */,
+				9B3E2DD52664D49D00A181E4 /* RainService.swift in Sources */,
 				9B3E2DBD2664C8EE00A181E4 /* SceneDelegate.swift in Sources */,
+				9B3E2DD02664CD2200A181E4 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
