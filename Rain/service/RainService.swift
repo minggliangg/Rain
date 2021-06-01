@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RainServiceDelegate {
-    func didUpdateRealtimeRainfall(_ rainfall:[RealtimeRainfallData])
+    func didUpdateRealtimeRainfall(_ realtimeRainfall:RealtimeRainfall)
 }
 
 struct RainService {
@@ -17,7 +17,7 @@ struct RainService {
     
     let realtimeRainfallURL = "https://api.data.gov.sg/v1/environment/rainfall?date_time="
     
-    func fetchWeather(date_time: String) {
+    func fetchWeather(at date_time: String) {
         let urlString = realtimeRainfallURL+date_time
         performRequest(urlString)
     }
@@ -27,6 +27,7 @@ struct RainService {
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
+                
                 if let error = error {
                     print("Error encountered: \(error)")
                     return
@@ -45,21 +46,38 @@ struct RainService {
                 } else {
                     print("No Data")
                 }
-                
-            }
+                        }
             task.resume()
         }
         
     }
     
-    func parseJSON(weatherData: Data) -> [RealtimeRainfallData]? {
+    func parseJSON(weatherData: Data) -> RealtimeRainfall? {
         
         let decoder = JSONDecoder()
         guard let realtimeRainfall = try? decoder.decode(RealtimeRainfall.self, from: weatherData) else {
             print("An error occured while decoding Realtime Rainfall")
             return nil
         }
-        return realtimeRainfall.getAllLocationData()
+        return realtimeRainfall
+        
+    }
+    
+    func getStatusImageView(reading:Double) -> String {
+        
+        switch reading {
+        
+        case 0 :
+            return "cloud"
+        case 0..<0.21:
+            return "cloud.drizzle"
+        case 0.21..<0.83:
+            return "cloud.rain"
+        case 0.83... :
+            return "cloud.heavyrain"
+        default:
+            return "cloud"
+        }
         
     }
 }
